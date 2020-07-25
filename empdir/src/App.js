@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Results from "./components/Results";
 import './App.css';
 
 function App() {
@@ -9,25 +12,18 @@ function App() {
 
   React.useEffect(()=>{
     axios.get("https://randomuser.me/api/?results=5").then(x=>setPeople(x.data.results))
-  })
+  },[])
 
  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {people.map(person=>{
-          return(
-          <h1>{person.name}</h1>
-          )
-        })}
-      </header>
+    <div>
+      <Wrapper>
+        <Header />
+        <Results />
+
+      </Wrapper>
     </div>
-  );
   
-}
+  )}
 
 export default App;
