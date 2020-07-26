@@ -6,7 +6,7 @@ function Results() {
     const [people, setPeople] = React.useState([])
 
     React.useEffect(() => {
-        axios.get("https://randomuser.me/api/?results=5").then(x => setPeople(x.data.results))
+        axios.get("https://randomuser.me/api/?results=10&inc=name,phone,nat,email,picture").then(x => setPeople(x.data.results))
     }, [])
     return (
         <div className="results">

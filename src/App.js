@@ -4,6 +4,7 @@ import React from 'react';
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Results from "./components/Results";
+import SearchBar from "./components/Search"
 import './App.css';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
   return (
     <div>
       <Wrapper>
-        <Header />
+      <Header />
+        <SearchBar />
         <Results />
 
       </Wrapper>
